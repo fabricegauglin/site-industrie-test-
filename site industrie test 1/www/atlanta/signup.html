@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Webflow">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/framework.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <script src="js/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ["Montserrat:400,700"]
+      }
+    });
+  </script>
+  <script type="text/javascript" src="js/modernizr.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="images/favico.ico">
+  <link rel="apple-touch-icon" href="images/favico.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <section class="mobile-wrapper w-section">
+    <div class="bg-gradient page-content" data-scroll="0" id="main-stack">
+      <div class="navbar transparent w-nav" data-animation="over-right" data-collapse="all" data-contain="1" data-duration="400" data-easing="ease-out-quint" data-no-scroll="1">
+        <div class="w-container">
+          <div class="wrapper-mask" data-ix="menu-mask"></div>
+          <div class="navbar-title">Sign Up</div>
+          <a class="navbar-button w-inline-block" data-load="1" href="login.html">
+            <div class="icon ion-ios-close-empty navbar-button-icon"></div>
+          </a>
+        </div>
+      </div>
+      <div class="body padding">
+        <div class="logo-login smaller"></div>
+        <div class="bottom-section padding">
+          <div class="w-form">
+            <form data-name="Email Form" data-redirect="home.html" id="submit-form" name="email-form" action="#">
+              <div>
+                <input class="input-form light w-input" data-name="full-name" id="full-name-field" maxlength="256" name="full-name" placeholder="Full Name" required="required" type="text">
+                <div class="separator-fields"></div>
+              </div>
+              <div>
+                <input class="input-form light w-input" data-name="email" id="email-field" maxlength="256" name="email" placeholder="Email" required="required" type="email">
+                <div class="separator-fields"></div>
+              </div>
+              <div>
+                <input class="input-form light w-input" data-name="password" id="password-ield" maxlength="256" name="password" placeholder="Password" required="required" type="password">
+                <div class="separator-fields"></div>
+              </div>
+              <div class="separator-button-input"></div>
+              <input class="action-button w-button" data-wait="Please wait..." type="submit" value="Sign Up">
+              <div class="separator-button"></div><a class="link-upper" data-load="1" href="login.html">Already have an account? <strong class="b-link">Sign in</strong></a>
+            </form>
+            <div class="w-form-done">
+              <p>Thank you! Your submission has been received!</p>
+            </div>
+            <div class="w-form-fail">
+              <p>Oops! Something went wrong while submitting the form</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="loading-mask page-content" id="new-stack">
+      <div class="loading-icon">
+        <div class="icon ion-load-d navbar-button-icon"></div>
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/framework.js"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
+  <!--[if lte IE 9]><script src="js/placeholders.min.js"></script><![endif]-->
+</body>
+</html>

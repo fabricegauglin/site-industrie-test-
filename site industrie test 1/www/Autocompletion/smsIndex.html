@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head >
+		<title>AutoCompletion</title>
+		
+		<link rel="Stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css" />
+		<style>
+            #bloc_page 
+            {    
+                width: 900px;    
+                margin: auto; 
+            } 
+            .cadre
+			{
+				position:relative;
+                width: 610px;
+                height: 150px;
+                top: 10px;
+				left: 150px;
+			}
+            img 
+            {
+                position: relative;
+                max-width: 20%;
+                height: auto;
+                top: 140px;
+                left: 470px;
+            }
+            
+            #input1
+            {
+				position: relative;
+                border-radius: 5px; 
+                width: 310px;
+                height: 27px;
+                top: 60px;
+				left: 5px;
+                font-family: Arial, sans-serif;
+            }
+			.label1
+            {	
+				position: relative;
+				top: 65px;
+                font-family: arial, sans serif;
+            }
+            
+            #input2
+            {
+                position: relative;
+                border-radius: 5px; 
+                width: 310px;
+                height: 27px;
+				top: 65px;
+                left:32px;
+            }
+			
+			
+			.label2
+            {	
+				position: relative;
+				top: 67px;
+                font-family: arial, sans serif;
+            }
+            
+            .area
+            {
+                position:relative;
+                width: 600px;
+                height: 170px;
+                top: 120px;
+                font-family: Arial, sans-serif;
+            }
+            
+            .input3
+            {
+                position: relative;
+                top:170px;
+				left: 250px;
+                border-radius: 5px; 
+                width: 75px;
+                height: 28px;
+                text-align: center;
+                font-family: arial, sans serif;
+                
+             
+            }
+ 
+        </style</style>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
+	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.ui/1.8.10/jquery-ui.js"></script>
+		<script type="text/javascript">
+			var cache = {};
+			$(function ()
+			{
+				$("#input1, #input2").autocomplete({
+					source: function (request, response)
+					{
+						//Si la réponse est dans le cache
+						if (('DN' + '-' + request.term) in cache)
+						{
+							response($.map(cache['DN' + '-' + request.term], function (item)
+							{
+
+								return {
+									label: item.Dest + ", " + item.Num,
+									value: function ()
+									{
+										if ($(this).attr('id') == 'input1')
+										{
+											$('#input2').val(item.Num);
+											return item.Dest;
+										}
+										else
+										{
+											$('#input1').val(item.Dest);
+											return item.Num;
+										}
+									}
+								}
+							}));
+						}
+						//Sinon -> Requete Ajax
+						else
+						{
+							var objData = {};
+							if ($(this.element).attr('id') == 'input1')
+							{
+								objData = { Destinataire: request.term, pays: 'FR', maxRows: 10 };
+							}
+							else
+							{
+								objData = { Numero: request.term, pays: 'FR', maxRows: 10 };
+							}
+							$.ajax({
+								url: "./smsAutoCompletion.php",
+								dataType: "json",
+								data: objData,
+								type: 'POST',
+								success: function (data)
+								{
+									//Ajout de reponse dans le cache
+									cache[('DN' + '-' + request.term)] = data;
+									response($.map(data, function (item)
+									{
+
+										return {
+											label: item.Dest + ", " + item.Num,
+											value: function ()
+											{
+												if ($(this).attr('id') == 'input1')
+												{
+													$('#input2').val(item.Num);
+													return item.Dest;
+												}
+												else
+												{
+													$('#input1').val(item.Dest);
+													return item.Num;
+												}
+											}
+										}
+									}));
+								}
+							});
+						}
+					},
+					minLength: 1,
+					delay: 600
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="bloc_page">
+			<div class="cadre">
+                <img src="../logo.jpg"  alt="Photo de montagne" /> 
+    
+                <form name="form_1" action="#">
+                    <label class="label1">Destinataire:</label>
+                    <input type="text" name="destinataire" value="" id="input1" /><br/>
+                                           
+                    <label class="label2">Numero:</label>
+                    <input type="tel" name="numero" value="" id="input2"/><br/>
+                    
+                          
+                    <textarea name="ameliorer"  class="area"></textarea> <br/>
+                    <input type="submit" value="Envoyer" name="valid" class="input3" />
+                        
+                </form>
+			</div>
+          
+      
+                   
+        </div>
+
+	</body>
+</html>

@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <title>smsEnvoyer.html</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            #bloc_page 
+            {    
+                width: 900px;    
+                margin: auto; 
+            } 
+            
+            img 
+            {
+                position: absolute;
+                max-width: 10%;
+                height: auto;
+                top: 70px;
+                left: 670px;
+            }
+            
+            .input1
+            {
+		position: absolute;
+                border-radius: 5px; 
+                width: 310px;
+                height: 27px;
+                top: 100px;
+				left: 332px;
+                font-family: Arial, sans-serif;
+            }
+            
+            .input2
+            {
+                position: absolute;
+                border-radius: 5px; 
+                width: 310px;
+                height: 27px;
+				top: 140px;
+                left:332px;
+            }
+			
+			.label1
+            {	
+				position: absolute;
+				top: 103px;
+				left: 235px;
+                font-family: arial, sans serif;
+            }
+			.label2
+            {	
+				position: absolute;
+				top: 147px;
+				left:235px;
+                font-family: arial, sans serif;
+            }
+            
+            .area
+            {
+                position:absolute;
+                width: 600px;
+                height: 150px;
+                top: 250px;
+                font-family: Arial, sans-serif;
+            }
+            
+            .input3
+            {
+                position: absolute;
+                top:500;
+		left: 480;
+                border-radius: 5px; 
+                width: 75px;
+                height: 28px;
+                text-align: center;
+                font-family: arial, sans serif;
+                
+             
+            }
+ 
+        </style>
+    </head>
+    
+    <body>
+        <div id="bloc_page">
+                    <img src="logo.jpg"  alt="Photo de montagne" />
+    
+                    <form name="form_1" action="test_sms2.php">
+                        <label class="label1">Destinataire:</label>
+                        <input type="text" name="destination" value="" class="input1" /><br>
+                        </br>
+                        
+                        <label class="label2">Numero:</label>
+                        <input type="tel" name="telephone" value="" class="input2"/><br>
+                        </br>
+                          
+                        <textarea name="ameliorer"  class="area"></textarea> <br>
+                        <input type="submit" value="Envoyer" name="valid" class="input3" />
+                        
+                    </form>
+          
+      
+                   
+        </div>
+    </body>
+    
+</html>

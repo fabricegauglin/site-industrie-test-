@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Add New</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Webflow">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/framework.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <script src="js/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ["Montserrat:400,700"]
+      }
+    });
+  </script>
+  <script type="text/javascript" src="js/modernizr.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="images/favico.ico">
+  <link rel="apple-touch-icon" href="images/favico.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="css/ionicons.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <section class="mobile-wrapper w-section">
+    <div class="page-content" id="main-stack">
+      <div class="navbar w-nav" data-animation="over-right" data-collapse="all" data-contain="1" data-duration="400" data-easing="ease-out-quint" data-no-scroll="1">
+        <div class="w-container">
+          <div class="wrapper-mask" data-ix="menu-mask"></div>
+          <div class="navbar-title">Add New</div>
+          <a class="bigger navbar-button right w-inline-block" data-load="1" href="todo-list.html">
+            <div class="icon ion-ios-checkmark-empty navbar-button-icon"></div>
+          </a>
+          <a class="navbar-button w-inline-block" data-load="1" href="todo-list.html">
+            <div class="icon ion-ios-close-empty navbar-button-icon"></div>
+          </a>
+        </div>
+      </div>
+      <div class="body padding">
+        <div class="w-form">
+          <form data-name="Email Form" id="email-form" name="email-form" action="#">
+            <div class="separator-fields"></div>
+            <div class="separator-fields"></div>
+            <div class="background-grey"></div>
+            <div class="row-input-list">
+              <label class="label-form" for="title">TITLE</label>
+              <input class="in-grey input-form w-input" data-name="title" id="title" maxlength="256" name="title" required="required" type="text">
+              <div class="separator-fields"></div>
+            </div>
+            <div class="background-grey last"></div>
+            <div class="row-input-list">
+              <label class="label-form" for="description-2">DESCRIPTION</label>
+              <input class="in-grey-last input-form w-input" data-name="description" id="description-2" maxlength="256" name="description" required="required" type="text">
+              <div class="separator-fields"></div>
+            </div>
+            <div class="row-input-list">
+              <label class="label-form" for="birthday-field">DATE</label>
+              <input class="input-form w-input" data-name="birthday" id="birthday-field" maxlength="256" name="birthday" required="required" type="text">
+              <div class="separator-fields"></div>
+            </div>
+            <div class="w-clearfix">
+              <div class="left row-input-list w50">
+                <label class="label-form" for="birthday-field">FROM</label>
+                <input class="input-form w-input" data-name="birthday" id="birthday-field" maxlength="256" name="birthday" required="required" type="text">
+                <div class="separator-fields"></div>
+              </div>
+              <div class="row-input-list w50">
+                <label class="label-form" for="birthday-field">TO</label>
+                <input class="input-form w-input" data-name="birthday" id="birthday-field" maxlength="256" name="birthday" required="required" type="text">
+                <div class="separator-fields"></div>
+              </div>
+            </div>
+            <div class="row-input-list">
+              <label class="label-form" for="birthday-field">LOCATION</label>
+              <div class="block-input-combined">
+                <input class="input-form left w-input" data-name="location" id="location" maxlength="256" name="location" required="required" type="text">
+                <a class="color right-input-icon w-inline-block" href="#">
+                  <div class="icon ion-ios-location"></div>
+                </a>
+              </div>
+              <div class="separator-fields"></div>
+            </div>
+            <div class="row-input-list">
+              <div class="input-form one-line w-clearfix">
+                <label class="label-form middle" for="email">PRIORITY</label>
+                <div class="radios-container w-clearfix">
+                  <div class="radio-button w-clearfix w-radio">
+                    <div class="radio-bullet-replacement"></div>
+                    <input class="radio-bullet w-radio-input" data-name="Radio3" id="node-9" name="Radio3" type="radio" value="2">
+                    <label class="w-form-label" for="node-9">High</label>
+                  </div>
+                  <div class="radio-button w-clearfix w-radio">
+                    <div class="checked radio-bullet-replacement"></div>
+                    <input class="radio-bullet w-radio-input" data-name="Radio3" id="node-6" name="Radio3" type="radio" value="1">
+                    <label class="w-form-label" for="node-6">Mid</label>
+                  </div>
+                  <div class="radio-button w-clearfix w-radio">
+                    <div class="radio-bullet-replacement"></div>
+                    <input class="radio-bullet w-radio-input" data-name="Radio3" id="node-5" name="Radio3" type="radio" value="0">
+                    <label class="w-form-label" for="node-5">Low</label>
+                  </div>
+                </div>
+              </div>
+              <div class="separator-fields"></div>
+            </div>
+            <div class="row-input-list">
+              <div class="input-form one-line w-clearfix">
+                <label class="label-form middle" for="email">ALL&nbsp;DAY</label>
+                <div class="radios-container w-clearfix">
+                  <div class="checkbox-field w-checkbox w-clearfix">
+                    <div class="checkbox-handle"></div>
+                    <input class="checkbox-input w-checkbox-input" data-name="Checkbox" id="checkbox" name="checkbox" type="checkbox">
+                    <label class="checkbox-label w-form-label" for="checkbox"></label>
+                  </div>
+                </div>
+              </div>
+              <div class="separator-fields"></div>
+            </div>
+            <div class="row-input-list">
+              <div class="input-form last one-line w-clearfix">
+                <label class="label-form middle" for="email">REPEAT</label>
+                <div class="radios-container w-clearfix">
+                  <div class="checkbox-field w-checkbox w-clearfix">
+                    <div class="checkbox-handle"></div>
+                    <input class="checkbox-input w-checkbox-input" data-name="Checkbox 2" id="checkbox-2" name="checkbox-2" type="checkbox">
+                    <label class="checkbox-label w-form-label" for="checkbox-2"></label>
+                  </div>
+                </div>
+              </div>
+              <div class="separator-fields"></div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+    <div class="loading-mask page-content" id="new-stack">
+      <div class="loading-icon">
+        <div class="icon ion-load-d navbar-button-icon"></div>
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/framework.js"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
+  <!--[if lte IE 9]><script src="js/placeholders.min.js"></script><![endif]-->
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>sms.html</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+        <style>
+            #bloc_page 
+            {    
+		position: absolute;
+                width: 900px;    
+                margin: auto; 
+            } 
+            
+            img 
+            {
+                position: absolute;
+                max-width: 20%;
+                height: auto;
+				
+                top: 15px;
+                left: 170px;
+                
+               
+                
+            }
+            
+        
+            .input1
+            {
+		position: absolute;
+                border-radius: 5px; 
+                width: 250px;
+                height: 25px;
+				top:90px;
+                left: 85px;
+                font-family: Arial, sans-serif;
+                text-align: center;
+                color: black;
+                
+            }
+            .input2
+            {
+		position: absolute;
+                border-radius: 5px; 
+                width: 250px;
+                height: 25px;
+				top: 131px;
+				left: 85px;
+                text-align: center;
+                color: black;
+            
+            }
+            .input3
+            {
+		position: absolute;
+                border-radius: 5px; 
+                width: 250px;
+                height: 25px;
+		top: 190px;
+		left: 89px;
+                text-align: center;
+                font-size: 15px;
+                color: blakc;
+                
+                
+             
+            }
+
+            .form
+            {
+		position: absolute;
+                width: 430px;
+                height: 250px;
+		top: 110px;
+		left: 460px;
+                
+                border: 1px solid rgb(1,101,201);   
+                border-radius: 10px; 
+                
+                background-color: rgb(1,101,201);
+				
+
+            }
+			
+            .footer
+            {
+		position: absolute;
+                top: 560px;
+		left: 530px;
+                text-align: center;
+                COLOR: rgb(150,150,150);
+                font-size: 14px;
+            }
+        </style>
+        
+        
+    </head>
+    
+    <body>
+        <div id="bloc_page">
+    
+         
+            <div class="form">
+			
+                <img src="logo1.png"  alt="Photo de montagne" />
+                    
+                <form name="form_1" action="test_sms.php" class="formulaire">
+                    <input type="text" name="identifiant" value="" placeholder="Identifiant" class="input1" /><br>
+                    </br>
+                    <input type="text" name="mot_de_passe" value=""  placeholder="Mot de passe" class="input2"/><br>
+                    </br>
+                    <input type="submit" value="Valider" name="valid" class="input3" />
+                </form>
+                
+            </div>
+            
+            
+            <div class="footer">
+                <p>
+                        © 2016 KODEKH TELECOM. All rights reserved.
+                </p>
+			</div>
+        </div>
+    </body>
+</html>
+
+
+
+
+

@@ -1,0 +1,2 @@
+1. Pensez à importer le fichier autocomplete.sql dans votre base de données MySQL
+2. Modifier la ligne 10 du fichier AutoCompletion.php avec vos informations de connexion

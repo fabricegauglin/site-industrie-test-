@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript">
+	function  formXML() {
+		var login = document.getElementById('LOGIN').value;
+		var password = document.getElementById('PASSWORD').value;
+		var sender = document.getElementById('SENDER').value;
+		var dest = document.getElementById('DEST').value;
+		var message = document.getElementById('MESSAGE').value;
+		document.sendSMS.XML.value = "<sms><authentification><username>" + login + "</username><password>" + password + "</password></authentification><message><sender>" + sender +"</sender><text>" + message + "</text></message><recipients><gsm gsmsmsid=\"\">" + dest +"</gsm></recipients></sms>" ;
+		document.getElementById('sendSMS').submit();
+	}
+
+	function  formXMLAR() {
+		var login = document.getElementById('LOGINAR').value;
+		var password = document.getElementById('PASSWORDAR').value;
+		var ticket = document.getElementById('TICKET').value;
+        //document.sendAR.XML.value = "<deliveryreport><ticket gsmsmsid=\"\">" + ticket + "</ticket></message></deliveryreport>" ;
+		document.sendAR.XML.value = "<deliveryreport><authentification><username>" + login + "</username><password>" + password + "</password></authentification><message><ticket gsmsmsid=\"\">" + ticket + "</ticket></message></deliveryreport>" ;
+		document.getElementById('sendAR').submit();
+	}
+</script>
+</head>
+
+<body>
+<h1>API envoi SMS, HTTP POST, XML.</h1>
+<p><a href="http://www.smsfactor.com/html/SMSFactor-DOC-API_V3.pdf" target="_blank" title="API SMS">Documentation API</a></p>
+<hr />
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%">
+    	<form id="formSMS" name="formSMS" >
+            <u>Formulaire pour envoyer un SMS :</u><br /><br />
+            <label>Login : <input name="LOGIN" id="LOGIN" type="text" size="20" /></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>Mot de passe : <input name="PASSWORD" id="PASSWORD" type="PASSWORD" size="20" /></label><br /><br />
+            <label>Expéditeur : <input name="SENDER" id="SENDER" type="text" size="15" /></label><br /><br />
+            <label>Destinataire : <input name="DEST" id="DEST" type="text" size="14" /></label><br /><br />
+            <label>Message : <textarea name="MESSAGE" id="MESSAGE" cols="30" rows="5"></textarea></label><br /><br />
+        </form>
+        <form id="sendSMS" name="sendSMS" method="post" action="https://api.smsfactor.com">
+        	<input type="hidden" name="XML" id="XML">
+            <label><input type="button" name="button" id="button" value="Envoyer" onclick="formXML();" /></label>
+   		</form>
+    </td>
+    <td width="50%">
+        <p><u>Format XML</u></p>
+        <p><code>
+            &lt;sms><br />
+            &lt;authentification><br />
+            &lt;username>VOTRE LOGIN SMSFACTOR.COM&lt;/username><br />
+            &lt;password>VOTRE MOT DE PASSE&lt;/password><br />
+            &lt;/authentification><br />
+            &lt;message><br />
+            &lt;sender>EXPEDITEUR&lt;/sender><br />
+            &lt;text>VOTRE MESSAGE&lt;/text><br />
+            &lt;/message><br />
+            &lt;recipients><br />
+            &lt;gsm gsmsmsid="">DESTINATAIRE(S)&lt;/gsm><br />
+            &lt;/recipients><br />
+            &lt;/sms> <br />
+    	</code></p>
+    </td>
+  </tr>
+</table>
+
+<hr />
+<u>Formulaire pour recevoir un accusé de réception :</u><br />
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="50%">
+        <form id="formAR" name="formAR" >
+            <label>Login : <input name="LOGINAR" id="LOGINAR" type="text" size="20" /></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>Mot de passe : <input name="PASSWORDAR" id="PASSWORDAR" type="PASSWORD" size="20" /></label><br /><br />
+            <label>Ticket : <input name="TICKET" id="TICKET" type="text" size="10" /></label><br /><br />
+        </form>
+        <form id="sendAR" name="sendAR" method="post" action="https://api.smsfactor.com/dr">
+                <input type="hidden" name="XML" id="XML">
+                <label><input type="button" name="button" id="button" value="Envoyer" onclick="formXMLAR();" /></label>
+        </form>
+    </td>
+    <td width="50%">
+        <p><u>Format XML</u></p>
+        <p><code>
+                &lt;deliveryreport> <br />
+                &lt;authentification> <br />
+                &lt;username>VOTRE LOGIN SMSFACTOR.COM&lt;/username> <br />
+                &lt;password>VOTRE MOT DE PASSE&lt;/password> <br />
+                &lt;/authentification> <br />
+                &lt;message> <br />
+                &lt;ticket gsmsmsid="">TICKET&lt;/ticket><br /> 
+                &lt;/message> <br />
+            	&lt;/deliveryreport> <br />
+        </code></p>
+    </td>
+  </tr>
+</table>
+<hr />
+
+
+</body>
+</html>
